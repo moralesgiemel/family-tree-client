@@ -1,0 +1,14 @@
+.family-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: white;
+}

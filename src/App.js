@@ -1,24 +1,39 @@
-import logo from './logo.svg';
+
 import './App.css';
+
+// Routing Components
+import {BrowserRouter as Router} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
+
+// React Bootstrap Components
+import Container from 'react-bootstrap/Container'
+
+// Components
+import NavBar from './components/NavBar'
+import AddMember from './components/AddMember'
+import EditMember from './components/EditMember'
+
+// Pages
+import Home from './pages/Home'
+import Member from './pages/Member'
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+    <NavBar/>
+    <Container>
+      <Router>
+          <Switch>
+            <Route exact path = '/' component={Home}></Route>
+            <Route exact path = '/member/:id' component={Member}></Route>
+            <Route exact path = '/add' component={AddMember}></Route>
+            <Route exact path = '/member/edit/:id' component={EditMember}></Route>
+          </Switch>
+      </Router>
+    </Container>
+   </>
   );
 }
 
